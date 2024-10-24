@@ -1,0 +1,11 @@
+update requirements.txt
+pip fresh > requirements.txt
+
+generate migration (after update /models):
+alembic revision --autogenerate -m "comment"
+
+update database model:
+alembic upgrade head
+
+downgrade model:
+alembic downgrade -1
